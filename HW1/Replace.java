@@ -17,6 +17,8 @@ package HW1;
 
 public class Replace {
     public String charReplace(String str, int index, char c) {
-        return null; // replace null with your code
-    }
+        String first = str.substring(0, index);
+        String last = str.substring(index + 2);
+        return first + c + last;
+}
 }
