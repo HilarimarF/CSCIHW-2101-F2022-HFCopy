@@ -1,6 +1,5 @@
 package HW2;
 
-
 public class MathGames {
     // 1. Create a method that will calculate the Pythagorean Theorem (https://en.wikipedia.org/wiki/Pythagorean_theorem)
     // c = sqrt(a^2+b^2)
@@ -10,8 +9,19 @@ public class MathGames {
     // Hint 2: Math.pow and Math.sqrt are your friend here
     // Bonus points: Try to make it accept any 2 sides and return the 3rd. So it can take in
     // Hypotenuse and Perpendicular and return the base.
+    
+    class PythagoreanTheorem {
+        public double pythagoreanTheorem(double a, double b) {
+            double c = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2));
+            return c;
 
+        
 
+            
+
+        }
+    }
+ 
 
     
     // 2. Create a method that will calcuate my grade in the class. You can use the grade range as follows
@@ -25,6 +35,23 @@ public class MathGames {
         // Hint 1: if statements are your friend here you will probably need at the least 5 if / ifelse / else statments
         // Hint 2: You will probably need to cast the double to an int
         // Hint 3: You will probably need to use the Math.ceil() method 
+
+    class Grade {
+        public String grade(double grade) {
+            if (grade >= 90) {
+                return "A";
+            } else if (grade >= 80) {
+                return "B";
+            } else if (grade >= 70) {
+                return "C";
+            } else if (grade >= 60) {
+                return "D";
+            } else {
+                return "F";
+            }
+        }
+    }
+       
 
 
 
@@ -44,12 +71,21 @@ public class MathGames {
 
     // you do not need this main if you want to make a tester class
      public static void main(String[] args){
-        System.out.println("Hello World");
+        System.out.println("Hello World"); 
+    
+        class Tip {
+            public double tip(double totalBill, double people, double tip) {
+                double tipAmount = totalBill * (tip / 100);
+                double total = totalBill + tipAmount;
+                double totalPerPerson = total / people;
+                return Math.ceil(totalPerPerson);
+            }
+        }
+    }} 
         
         
-    }
+    
 
 
 
 
-}
