@@ -76,6 +76,14 @@ public class BankAccount {
         // balance = balance + amount
         // 10000 = 10000 + 2000
     }
+    // 
+    public void overDraft(double amount){
+        if (this.balance < amount){
+            System.out.println("You do not have enough funds to withdraw that amount we will charge you a $35 fee");
+        } else {
+            withdraw(amount);
+        }
+    }
 
     // Create a method to withdraw money
     public void withdraw(double amount) {

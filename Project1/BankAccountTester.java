@@ -5,5 +5,7 @@ public class BankAccountTester {
         // Example Bank Account used for Transfer Methods
         BankAccount gregChecking = new BankAccount(20000);
 
+        gregChecking.interact(gregChecking);
+
     }
 }
