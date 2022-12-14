@@ -1,5 +1,7 @@
 package HW4;
 
+import java.util.Scanner;
+
 public class Arrays {
 
     // CONVERT THE SUMS METHOD FROM HW3 TO ADD EACH VALUE TO AN ARRAY AND THEN OUTPUT THE 
@@ -23,8 +25,25 @@ public class Arrays {
     // Total: 22
     // Array: {12,2,3,4,1,0}
     public static void Arraysums(){
+        System.out.println("I will add up the numbers you give me....");
+        int total = 0;
+        int[] array = new int[10]; 
+        Scanner scan = new Scanner(System.in);
+        while (true){
+            System.out.println("Number: ");
+            int num = scan.nextInt();
+            total += num;
+            System.out.println("The total so far is " + total + ".");
+            if(num == 0){
+                System.out.println("TOTAL ENDED --- The total is " + total + ".");
+                break; }
+            else if(num != 0){
+                continue;
+            } }
 
-    }
+        }
+
+    
 
     // Create a method that will brute force a password EX.
     // bruteForce("ZZZZ")

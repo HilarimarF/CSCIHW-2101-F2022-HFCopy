@@ -17,8 +17,23 @@ public class Loops {
     //eeeeat -> false
 
     public static boolean loopE(String str){
-        return true; // <- this should be changed 
+       int count = 0;
+         for(int i = 0; i < str.length(); i++){
+              if(str.charAt(i) == 'e'){
+                count++;
+              }
+         }
+            if(count >= 1 && count <= 3){
+            return true;
+            }
+            else{
+            return false;
+            }
+    
+
     }
+    
+   
 
     //Given a String str and int n return a larger string
     //that is n copies of the original string 
@@ -26,7 +41,11 @@ public class Loops {
     //stringTimes("Code",2) ->"CodeCode"
     //stringTimes("Code",4) ->"CodeCodeCodeCode"
     public static String stringTimes(String str, int n) {
-        return null; // <- this should be changed 
+        String temp = "";
+        for(int i = 0; i < n; i++){
+            temp += temp+str;
+        }
+        return temp;
     } 
 
     //Create a method Given a string, return the string where all of the "z"
@@ -37,7 +56,14 @@ public class Loops {
     //stringZ("nozthaznks") -> "nothanks"
     //stringZ("xksiazdjaasldzsajzasdz") -> "xksiadjaasldsajasdz"
     public static String stringZ(String str){
-        return null; // <- this should be changed 
+        String temp = "";
+        for(int i = 0; i < str.length(); i++){
+            if(str.charAt(i) != 'z'){
+                temp += str.charAt(i);
+            }
+        }
+        return temp;
+
     }
 
     //Create a method that contains a while loop that allows for
@@ -66,11 +92,40 @@ public class Loops {
     // Number: 0
     // TOTAL ENDED --- The total is 27.
     public static void sums(){
-    }
+        System.out.println("I will add up the numbers you give me....");
+        int total = 0;
+        Scanner scan = new Scanner(System.in);
+        while (true){
+            System.out.println("Number: ");
+            int num = scan.nextInt();
+            total += num;
+            System.out.println("The total so far is " + total + ".");
+            if(num == 0){
+                System.out.println("TOTAL ENDED --- The total is " + total + ".");
+                break; }
+            else if(num != 0){
+                continue;
+            } }
+
+        }
+        
+            
 
     public static void main(String[] args) {
         // Add code to help test your methods here
-        System.out.println("Start of Main");
+    
+        }
+    
+
+    private boolean result;
+    
+
+    public boolean isResult() {
+        return result;
+    }
+
+    public void setResult(boolean result) {
+        this.result = result;
     }
     
 }
