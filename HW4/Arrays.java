@@ -65,6 +65,24 @@ public class Arrays {
         char[] alphabet = new char[]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z',
         'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z',
         '!', '@', '#', '$', '%', '^', '&', '*', '(', ')','<','>','/','?'};
+        char[] passwordArray = password.toCharArray();
+        int i = 0;
+        while(i < passwordArray.length){
+            for(int j = 0; j < alphabet.length; j++){
+                if(passwordArray[i] == alphabet[j]){
+                    answer += alphabet[j];
+                    System.out.println(answer);
+                    i++;
+                
+                }
+            }
+        }
+        
+
+        
+
+
+
     
         return answer; 
     }
@@ -77,7 +95,22 @@ public class Arrays {
     // Hint 1: a temp Array is a helpful way to store variables for comparing 
     // Hint 2: 2 nested For loops should be all thats needed for the swapping logic
     public static int[] sorter(int[] nums){
-        int [] sortedArray = new int[nums.length];
+        int [] sortedArray = new int[nums.length]; 
+        int temp = 0;
+        System.out.println("The length of the array is " + nums.length);
+        for(int i = 0; i < nums.length; i++){
+            for(int j = i + 1; j < nums.length; j++){
+                if(nums[i] > nums[j]){
+                    temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+        }
+
+        for(int i = 0; i < nums.length; i++){
+            sortedArray[i] = nums[i];
+        }
         return sortedArray;
     }
 
@@ -86,9 +119,18 @@ public class Arrays {
 
     public static void main(String[] args) {
         // Tester main method for your methods
-        System.out.println("Hello World!");
-
+        System.out.println("Welcome to the Arrays Tester");
+        // Arraysums();
+        // bruteForce("ZZZZ");
+        int temp = 0;
+        int[] nums = new int[]{9,10,2,5,3,4,7,8};
+        for(int i = 0; i < nums.length; i++){
+            for(int j = i + 1; j < nums.length; j++){
+                if(nums[i] > nums[j]){
+                    temp = nums[i];
+                    nums[i] = nums[j];
+                    nums[j] = temp;
+                }
+            }
+        } } 
     }
-
-    
-}

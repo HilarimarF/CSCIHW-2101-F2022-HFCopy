@@ -18,12 +18,33 @@ public class ArrayListPlayground {
         // d) Set the value of the 9th element of the array nums to the sum of the 13th
         // and 2nd elements of the array nums.
 
+
+        ArrayList<Integer> nums = new ArrayList<Integer>(15);
+        System.out.println(nums.get(9));
+        nums.set(4, 99);
+        nums.set(12, 15);
+        nums.set(1, 6);
+        nums.set(8, nums.get(12) + nums.get(1));
+        System.out.println(nums);
+
+
+
+
+
         // Question 2
         // a) create an arrayList of Strings that contain each day of the week.(starting
         // on monday)
         // b) output each of the days of the week
         // c) output the days of the week that we have class
         // d) change the arrayList to start on Sunday
+
+        ArrayList<String> days = new ArrayList<>(Arrays.asList("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"));
+        System.out.println(days);
+        System.out.println(days.get(1) + " " + days.get(3));
+        Collections.rotate(days, 1);
+        System.out.println(days);
+
+        
 
         // Question 3
         // a) create an ArrayList and prompt the user for numbers to add to it until the
@@ -41,6 +62,47 @@ public class ArrayListPlayground {
         // and add them until it is
         // ArrayList Size: 7
         // Please enter 2 more numbers to create the matrix...
+
+        ArrayList<Integer> numbers = new ArrayList<Integer>();
+        Scanner input = new Scanner(System.in);
+        int num = 0;
+        while (num != 0) {
+            System.out.println("Enter a number(0 to stop): ");
+            num = input.nextInt();
+            while (num !=0)
+            numbers.add(num);
+            
+        }
+        System.out.println(numbers);
+        System.out.println("Largest number: " + Collections.max(numbers));
+        System.out.println("Smallest number: " + Collections.min(numbers));
+
+        Collections.sort(numbers);
+        System.out.println(numbers);
+
+        if (numbers.size() % 3 == 0) {
+            for (int i = 0; i < numbers.size(); i++) {
+                System.out.print(numbers.get(i) + " ");
+                if ((i + 1) % 3 == 0) {
+                    System.out.println();
+                }
+            }
+        } else {
+            System.out.println("Please enter 2 more numbers to create the matrix...");
+            int num1 = input.nextInt();
+            int num2 = input.nextInt();
+            numbers.add(num1);
+            numbers.add(num2);
+            for (int i = 0; i < numbers.size(); i++) {
+                System.out.print(numbers.get(i) + " ");
+                if ((i + 1) % 3 == 0) {
+                    System.out.println();
+                }
+            }
+        }
+        
+
+
         //
         // Hint 1: use collections sort to sort the numbers
         // Hint 2: you can see if the size of the array list is divisible by 3 by
