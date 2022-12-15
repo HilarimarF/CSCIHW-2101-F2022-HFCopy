@@ -108,24 +108,5 @@ public class Loops {
             } }
 
         }
-        
-            
-
-    public static void main(String[] args) {
-        // Add code to help test your methods here
-    
-        }
-    
-
-    private boolean result;
-    
-
-    public boolean isResult() {
-        return result;
-    }
-
-    public void setResult(boolean result) {
-        this.result = result;
-    }
     
 }
