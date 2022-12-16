@@ -59,15 +59,48 @@ public class Medals {
 
         int[][] counts = 
         { 
-            { 1, 0, 1 },
-            { 1, 1, 0 }, 
-            { 0, 0, 1 }, 
-            { 1, 0, 1 }, 
+            { 1, 0, 1 }, // Canada
+            { 1, 1, 1 }, // China
+            { 0, 0, 1 }, // Germany
+            { 1, 0, 0 }, // Korea
+            { 0, 1, 1 }, // Japan
             { 0, 1, 1 }, 
-            { 0, 1, 1 },
-            { 1, 1, 0 }
+            { 1, 1, 0 }  
+            
         };
         System.out.println("        Country    Gold    Silver    Bronze   Total");
+
+        for(int i = 0; i < COUNTRIES; i++){
+            int total = 0;
+            System.out.printf("%15s", countries[i]);
+            for(int j = 0; j < MEDALS; j++){
+                System.out.printf("%8d", counts[i][j]);
+                total += counts[i][j];
+            }
+            System.out.printf("%8d) %n", total);
+
+            for (int j = 0; j < MEDALS; j++) {
+                System.out.printf("%8d", counts[i][j]);
+            }
+            System.out.printf("%8d) %n", total);
+        }
+        System.out.println("          Total    Gold    Silver    Bronze   X");
+        System.out.printf("%15s", " ");
+        for (int j = 0; j < MEDALS; j++) {
+            int total = 0;
+            for (int i = 0; i < COUNTRIES; i++) {
+                total += counts[i][j];
+            }
+            System.out.printf("%8d", total);
+        }
+        System.out.println();
+    }
+
+
+        
+
+
+
 
 
         // TODO
@@ -102,7 +135,7 @@ public class Medals {
      
     }
     
-}
+ 
 
 
 
