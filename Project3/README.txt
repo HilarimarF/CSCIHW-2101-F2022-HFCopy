@@ -118,3 +118,4 @@ if wrong -1 from lives
 if the lives hit 0 then end the game
 if the lives are not 0 and the end of the ladder is reached then print the final 
 ladder as well as a congrats 
+
