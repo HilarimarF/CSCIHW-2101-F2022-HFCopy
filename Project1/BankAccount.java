@@ -70,6 +70,16 @@ public class BankAccount {
     // Create a method to deposit money
     public void deposit(double amount) {
         this.balance += amount;
+        if (amount < 0){
+            System.out.println("You cannot deposit a negative amount");
+        } else {
+            this.balance += amount;
+        }
+        double currentBalance = this.balance;
+        double newBalance = this.balance + amount;
+        System.out.println("You have deposited $" + amount);
+
+
         // above is the same as this.balance = this.balance + amount;
         // balance is 10,000
         // amount  is 2,000
@@ -88,6 +98,14 @@ public class BankAccount {
     // Create a method to withdraw money
     public void withdraw(double amount) {
         this.balance -= amount;
+        if (amount < 0){
+            System.out.println("You cannot withdraw a negative amount");
+        } else if (this.balance < amount){
+            System.out.println("You do not have enough funds to withdraw that amount we will charge you a $35 fee");
+        } else {
+            this.balance -= amount;
+            withdraw(amount);
+        }
         // above is the same as this.balance = this.balance - amount;
         // balance is 10,000
         // amount  is 2,000
@@ -99,7 +117,16 @@ public class BankAccount {
     // This method will take a double as an argument
     // This method will subtract the fee from the balance
     public void monthlyFee(double fee) {
-        withdraw(fee);
+             withdraw(fee);
+             monthlyFee(25);
+             this.balance = balance - fee;
+                System.out.println("Your new balance is: $" + balance);
+
+             
+
+
+
+        
     }
 
 
